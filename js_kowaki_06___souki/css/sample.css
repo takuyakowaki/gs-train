@@ -1,0 +1,59 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+main{
+	width: 768px;
+	margin: auto;
+    border-bottom:1px solid #ccc;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size: 100%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+}
+ul{
+    padding: 0;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    list-style-type:none;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+	text-align: center;
+	padding: 10px 0;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+
+div p {
+	text-align: center;
+}
+
+div #pc_hands {
+	text-align: center;
+}
+
+#judgment{
+	text-align: center;
+	font-size: 200%;
+	font-weight: 900;
+	margin: 20px auto;
+}

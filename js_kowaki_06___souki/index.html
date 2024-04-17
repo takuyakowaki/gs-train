@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+
+<body>
+<header>
+  <h1>じゃんけん</h1>
+</header>
+<main>
+  <ul>
+    <li id="gu_btn"><img src="img/janken/my-gu.png" alt=""></li>
+    <li id="cho_btn"><img src="img/janken/my-cho.png" alt=""></li>
+    <li id="par_btn"><img src="img/janken/my-par.png" alt=""></li>
+  </ul>
+  <div><p>コンピュータの出した手は？</p>
+	  <div id="pc_hands">なに？</div>
+	</div>
+  <div id="judgment">勝ち</div>
+</main>
+<footer></footer>
+<script>
+    // グーが選択された場合
+    $("#gu_btn").on("click", function() {
+        var pcHands = ['<img src="img/janken/con-gu.png" alt="">', '<img src="img/janken/con-cho.png" alt="">', '<img src="img/janken/con-par.png" alt="">'];
+        var judgment = ['アイコ', '勝ち', '負け'];
+
+        displayResult(pcHands, judgment);
+    });
+
+    // チョキが選択された場合
+    $("#cho_btn").on("click", function() {
+        var pcHands = ['<img src="img/janken/con-gu.png" alt="">', '<img src="img/janken/con-cho.png" alt="">', '<img src="img/janken/con-par.png" alt="">'];
+        var judgment = ['負け', 'アイコ', '勝ち'];
+
+        displayResult(pcHands, judgment);
+    });
+
+    // パーが選択された場合
+    $("#par_btn").on("click", function() {
+        var pcHands = ['<img src="img/janken/con-gu.png" alt="">', '<img src="img/janken/con-cho.png" alt="">', '<img src="img/janken/con-par.png" alt="">'];
+        var judgment = ['勝ち', '負け', 'アイコ'];
+
+        displayResult(pcHands, judgment);
+    });
+
+    function displayResult(pcHands, judgment) {
+        var randomIndex = Math.floor(Math.random() * 3); // 0から2の乱数を生成
+
+        $("#pc_hands").html(pcHands[randomIndex]); // コンピュータの手を表示
+        $("#judgment").text(judgment[randomIndex]); // 判定結果を表示
+    }
+		
+		
+			// #gu_btnの場合 
+			// #pc_hands：<img src="img/janken/con-gu.png" alt="">
+			// #judgment：アイコ
+			
+			// #pc_hands：<img src="img/janken/con-cho.png" alt="">
+			// #judgment：勝ち
+			
+			// #pc_hands：<img src="img/janken/con-par.png" alt="">
+			// #judgment：負け
+	
+			// #cho_btnの場合 
+			// #pc_hands：<img src="img/janken/con-gu.png" alt="">
+			// #judgment：負け
+			
+			// #pc_hands：<img src="img/janken/con-cho.png" alt="">
+			// #judgment：アイコ
+			
+			// #pc_hands：<img src="img/janken/con-par.png" alt="">
+			// #judgment：勝ち	
+			
+			
+			// #par_btnの場合 
+			// #pc_hands：<img src="img/janken/con-gu.png" alt="">
+			// #judgment：勝ち
+			
+			// #pc_hands：<img src="img/janken/con-cho.png" alt="">
+			// #judgment：負け
+			
+			// #pc_hands：<img src="img/janken/con-par.png" alt="">
+			// #judgment：アイコ			
+</script>
+</body>
+</html>
